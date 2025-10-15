@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AZ Agencies</title>
+
+  <style>
+    :root {
+      --accent: #06b6d4;
+      --muted: #94a3b8;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      color: #fff;
+      background: url('./65376LF-PNLHP_HX5376-PN_TIGHT_WATER_0.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-radius: 0 0 16px 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      background: #fff;
+      padding: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    .navlink {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .navlink:hover,
+    .navlink.active {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .lang-select {
+      display: flex;
+      gap: 6px;
+    }
+
+    .lang-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #fff;
+      padding: 5px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 16px;
+      padding: 30px;
+      backdrop-filter: blur(6px);
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><img src="./logo_page-00022.jpg" alt="AZ Agencies Logo"></div>
+      <div>
+        <div id="site-title">AZ Agencies</div>
+        <small id="site-sub">Επαγγελματικές Υπηρεσίες</small>
+      </div>
+    </div>
+
+    <nav>
+      <button class="navlink active" data-page="home" id="nav-home">Αρχική</button>
+      <button class="navlink" data-page="about" id="nav-about">Ποιοι Είμαστε</button>
+      <button class="navlink" data-page="contact" id="nav-contact">Επικοινωνία</button>
+    </nav>
+
+    <div class="lang-select">
+      <button class="lang-btn" data-lang="el">ΕΛ</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="it">IT</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="de">DE</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="page-home">
+      <h1 id="home-title">Αρχική</h1>
+      <p id="home-body">Καλώς ήρθατε στην AZ Agencies. Η AZ Agencies δραστηριοποιείται στον τομέα των αντιπροσωπειών εργοστασίων που παράγουν υδραυλικά είδη ψύξης και θέρμανσης.</p>
+    </section>
+
+    <section id="page-about" style="display:none">
+      <h2 id="about-title">Ποιοι Είμαστε</h2>
+      <p id="about-body">Με έδρα την Αθήνα και με περισσότερα από δέκα έτη εμπειρίας, συνεργαζόμαστε με επιλεγμένους οίκους της Ευρώπης και της Ασίας, προσφέροντας αξιόπιστες και σύγχρονες λύσεις σε επαγγελματίες του κλάδου. Στην AZ Agencies δίνουμε έμφαση στην ποιότητα, την τεχνική υποστήριξη και τη συνέπεια, χτίζοντας μακροχρόνιες σχέσεις συνεργασίας βασισμένες στην εμπιστοσύνη και την εξειδίκευση.</p>
+    </section>
+
+    <section id="page-contact" style="display:none">
+      <h2 id="contact-title">Επικοινωνία</h2>
+      <p id="contact-body">Επικοινωνήστε μαζί μας για πληροφορίες ή συνεργασία.</p>
+      <p><strong>📧 Email:</strong> <a id="contact-email" href="mailto:info@azagencie.com">info@azagencie.com</a></p>
+      <p><strong>📞 <span id="phone-label">Τηλέφωνο</span>:</strong> <a id="contact-phone" href="tel:+306945589895">0030 694 558 9895</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> AZ Agencies — All rights reserved
+  </footer>
+
+  <script>
+    const i18n = {
+      el: {
+        sub: "Επαγγελματικές Υπηρεσίες",
+        nav: {home: "Αρχική", about: "Ποιοι Είμαστε", contact: "Επικοινωνία"},
+        home_title: "Αρχική",
+        home_body: "Καλώς ήρθατε στην AZ Agencies. Η AZ Agencies δραστηριοποιείται στον τομέα των αντιπροσωπειών εργοστασίων που παράγουν υδραυλικά είδη ψύξης και θέρμανσης.",
+        about_title: "Ποιοι Είμαστε",
+        about_body: "Με έδρα την Αθήνα και με περισσότερα από δέκα έτη εμπειρίας, συνεργαζόμαστε με επιλεγμένους οίκους της Ευρώπης και της Ασίας, προσφέροντας αξιόπιστες και σύγχρονες λύσεις σε επαγγελματίες του κλάδου. Στην AZ Agencies δίνουμε έμφαση στην ποιότητα, την τεχνική υποστήριξη και τη συνέπεια, χτίζοντας μακροχρόνιες σχέσεις συνεργασίας βασισμένες στην εμπιστοσύνη και την εξειδίκευση.",
+        contact_title: "Επικοινωνία",
+        contact_body: "Επικοινωνήστε μαζί μας για πληροφορίες ή συνεργασία.",
+        phone_label: "Τηλέφωνο"
+      },
+      en: {
+        sub: "Professional Services",
+        nav: {home: "Home", about: "Who We Are", contact: "Contact"},
+        home_title: "Home",
+        home_body: "Welcome to AZ Agencies. AZ Agencies operates in the field of representing factories that manufacture hydraulic products for cooling and heating systems.",
+        about_title: "Who We Are",
+        about_body: "Based in Athens and with more than ten years of experience, we collaborate with selected manufacturers across Europe and Asia, providing reliable and modern solutions for professionals in the field. At AZ Agencies, we emphasize quality, technical support, and consistency, building long-term partnerships based on trust and expertise.",
+        contact_title: "Contact",
+        contact_body: "Get in touch with us for information or collaboration.",
+        phone_label: "Phone"
+      },
+      it: {
+        sub: "Servizi Professionali",
+        nav: {home: "Home", about: "Chi Siamo", contact: "Contatti"},
+        home_title: "Home",
+        home_body: "Benvenuti in AZ Agencies. AZ Agencies opera nel settore delle rappresentanze di fabbriche che producono articoli idraulici per sistemi di raffreddamento e riscaldamento.",
+        about_title: "Chi Siamo",
+        about_body: "Con sede ad Atene e oltre dieci anni di esperienza, collaboriamo con produttori selezionati in Europa e Asia, offrendo soluzioni affidabili e moderne ai professionisti del settore. In AZ Agencies diamo importanza alla qualità, al supporto tecnico e alla coerenza, costruendo partnership durature basate sulla fiducia e sulla competenza.",
+        contact_title: "Contatti",
+        contact_body: "Contattateci per informazioni o collaborazione.",
+        phone_label: "Telefono"
+      },
+      ru: {
+        sub: "Профессиональные услуги",
+        nav: {home: "Главная", about: "О нас", contact: "Контакты"},
+        home_title: "Главная",
+        home_body: "Добро пожаловать в AZ Agencies. Компания AZ Agencies занимается представительством заводов, производящих гидравлическое оборудование для систем охлаждения и отопления.",
+        about_title: "О нас",
+        about_body: "Базируясь в Афинах и имея более десяти лет опыта, мы сотрудничаем с избранными производителями из Европы и Азии, предлагая надежные и современные решения для профессионалов отрасли. В AZ Agencies мы уделяем особое внимание качеству, технической поддержке и надежности, строя долгосрочные партнерские отношения, основанные на доверии и профессионализме.",
+        contact_title: "Контакты",
+        contact_body: "Свяжитесь с нами для получения информации или сотрудничества.",
+        phone_label: "Телефон"
+      },
+      es: {
+        sub: "Servicios Profesionales",
+        nav: {home: "Inicio", about: "Quiénes Somos", contact: "Contacto"},
+        home_title: "Inicio",
+        home_body: "Bienvenido a AZ Agencies. AZ Agencies opera en el sector de la representación de fábricas que producen artículos hidráulicos para sistemas de refrigeración y calefacción.",
+        about_title: "Quiénes Somos",
+        about_body: "Con sede en Atenas y más de diez años de experiencia, colaboramos con fabricantes seleccionados de Europa y Asia, ofreciendo soluciones confiables y modernas a los profesionales del sector. En AZ Agencies damos prioridad a la calidad, al soporte técnico y a la consistencia, construyendo relaciones de colaboración a largo plazo basadas en la confianza y la especialización.",
+        contact_title: "Contacto",
+        contact_body: "Contáctenos para obtener información o colaborar.",
+        phone_label: "Teléfono"
+      },
+      de: {
+        sub: "Professionelle Dienstleistungen",
+        nav: {home: "Startseite", about: "Über uns", contact: "Kontakt"},
+        home_title: "Startseite",
+        home_body: "Willkommen bei AZ Agencies. AZ Agencies ist im Bereich der Vertretung von Fabriken tätig, die hydraulische Produkte für Kühl- und Heizsysteme herstellen.",
+        about_title: "Über uns",
+        about_body: "Mit Sitz in Athen und mehr als zehn Jahren Erfahrung arbeiten wir mit ausgewählten Herstellern in Europa und Asien zusammen, um zuverlässige und moderne Lösungen für Fachleute der Branche anzubieten. Bei AZ Agencies legen wir Wert auf Qualität, technischen Support und Zuverlässigkeit und bauen langfristige Partnerschaften auf, die auf Vertrauen und Fachwissen basieren.",
+        contact_title: "Kontakt",
+        contact_body: "Kontaktieren Sie uns für Informationen oder Zusammenarbeit.",
+        phone_label: "Telefon"
+      }
+    };
+
+    const navLinks = document.querySelectorAll('.navlink');
+    const sections = {home: '#page-home', about: '#page-about', contact: '#page-contact'};
+
+    navLinks.forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('main section').forEach(s => s.style.display = 'none');
+        document.querySelector(sections[btn.dataset.page]).style.display = 'block';
+        navLinks.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        const t = i18n[lang];
+        document.getElementById('site-sub').textContent = t.sub;
+        document.getElementById('nav-home').textContent = t.nav.home;
+        document.getElementById('nav-about').textContent = t.nav.about;
+        document.getElementById('nav-contact').textContent = t.nav.contact;
+        document.getElementById('home-title').textContent = t.home_title;
+        document.getElementById('home-body').textContent = t.home_body;
+        document.getElementById('about-title').textContent = t.about_title;
+        document.getElementById('about-body').textContent = t.about_body;
+        document.getElementById('contact-title').textContent = t.contact_title;
+        document.getElementById('contact-body').textContent = t.contact_body;
+        document.getElementById('phone-label').textContent = t.phone_label;
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
